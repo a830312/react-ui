@@ -3,10 +3,11 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-    'tars-react-ui': './src/components/index.js'
+    'react-ui': './src/components/index.js'
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
+    pathinfo: true,
     filename: "[name].js"
   },
   resolve: {
@@ -16,12 +17,13 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel?presets[]=react,presets[]=es2015',
+        loader: 'babel',
         exclude: /node_modules/,
         include: [
           path.join(__dirname, 'src')
         ]
       }
     ]
-  }
+  },
+  devtool: 'eval'
 };

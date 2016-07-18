@@ -2,6 +2,7 @@ import React from 'react'
 import { ButtonToolbar, DropdownButton, MenuItem } from 'react-bootstrap'
 
 class DropdownList extends React.Component {
+
   constructor(props) {
     super(props);
     this.handleOptionsSelected = this.handleOptionsSelected.bind(this);
@@ -11,10 +12,18 @@ class DropdownList extends React.Component {
   }
 
   handleOptionsSelected(e, eventKey) {
-    if (typeof this.props.onSelect === 'function') {
-      let params = {};
-      params[this.props.filterName] = eventKey;
-      this.props.onSelect(params);
+    let { onSelect, filterName } = this.props;
+
+    if (typeof onSelect === 'function') {
+
+      if (filterName) {
+        let params = {};
+        params[this.props.filterName] = eventKey;
+        this.props.onSelect(params);  
+      } else {
+        this.props.onSelect(eventKey);
+      }
+      
     }
 
     this.setState({
