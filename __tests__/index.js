@@ -44,5 +44,5 @@ srcContext.keys().forEach(srcContext);
 const testsContext = require.context('.', true, /Spec$/);
 testsContext.keys().forEach(testsContext);
 */
-var context = require.context('../src/components', true, /-test\.js$/); //make sure you have your directory and regex test set correctly!
+var context = require.context('.', true, /Spec$/); //make sure you have your directory and regex test set correctly!
 context.keys().forEach(context);

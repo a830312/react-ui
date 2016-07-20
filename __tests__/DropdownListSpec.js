@@ -17,6 +17,6 @@ describe('DropdownList', () => {
         ]}
       />
     );
-    expect(ReactTestUtils.findRenderedDOMComponentWithTag(instance, 'li')).toBe('object');
+    expect(ReactTestUtils.findRenderedDOMComponentWithTag(instance, 'li')).toExist();
   });
 })
