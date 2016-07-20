@@ -1,9 +1,12 @@
 # tars-react-ui
 UI library for project tars
 
-dev
-npm start
+## dev
+- npm start
 
-build
-grunt
+## build
+- grunt
+
+## test
+- npm test
 
